@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+		 pageEncoding="UTF-8"%>
 <%@page import="com.example.board.BoardDAO, com.example.board.BoardVO"%>
 <%
 	String sid = request.getParameter("id");
@@ -10,6 +10,6 @@
 		BoardVO u = new BoardVO();
 		u.setSeq(id);
 		boardDAO.deleteBoard(id);
-		response.sendRedirect("list.jsp");
+		response.sendRedirect("list");
 	}
 %>

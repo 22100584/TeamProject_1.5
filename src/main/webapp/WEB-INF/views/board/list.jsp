@@ -1,7 +1,13 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-		 pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<!DOCTYPE html>
+<%--
+  Created by IntelliJ IDEA.
+  User: sinhyemin
+  Date: 2022/12/04
+  Time: 5:08 PM
+  To change this template use File | Settings | File Templates.
+--%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"%>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
@@ -29,8 +35,8 @@
 	</style>
 	<script>
 		function delete_ok(id){
-			var a = confirm("정말로 삭제하겠습니까?");
-			if(a) location.href='deletepost.jsp?id=' + id;
+			var a = confirm("정말로 삭제하시겠습니까?");
+			if(a) location.href='deleteok/'+id;
 		}
 	</script>
 </head>
@@ -40,25 +46,30 @@
 <table id="list" width="90%">
 	<tr>
 		<th>Id</th>
+		<th>Category</th>
 		<th>Title</th>
 		<th>Writer</th>
 		<th>Content</th>
 		<th>Regdate</th>
 		<th>Edit</th>
 		<th>Delete</th>
+
+
+
 	</tr>
-	<c:forEach items="${list}" var="u">
+	<c:forEach items ="${list}" var="u">
 		<tr>
-			<td>${u.getSeq()}</td>
-			<td>${u.getTitle()}</td>
-			<td>${u.getWriter()}</td>
-			<td>${u.getContent()}</td>
-			<td>${u.getRegdate()}</td>
-			<td><a href="editform.jsp?id=${u.getSeq()}">Edit</a></td>
-			<td><a href="javascript:delete_ok('${u.getSeq()}')">Delete</a></td>
+			<td>${u.seq}</td>
+			<td>${u.category}</td>
+			<td>${u.title}</td>
+			<td>${u.writer}</td>
+			<td>${u.content}</td>
+			<td>${u.regdate}</td>
+			<td><a href="editform/${u.seq}">글수정</a></td>
+			<td><a href="javascript:delete_ok('${u.seq}')">글삭제</a></td>
 		</tr>
 	</c:forEach>
 </table>
-<br/><a href="addpostform.jsp">Add New Post</a>
+<br/><button type="button" onclick="location.href='add'">새글쓰기</button>
 </body>
 </html>
