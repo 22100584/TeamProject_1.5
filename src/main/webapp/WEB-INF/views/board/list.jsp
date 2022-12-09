@@ -41,6 +41,7 @@
 	</script>
 </head>
 <body>
+<h2><a href="../login/logout">Logout</a></h2>
 <h1>자유게시판</h1>
 
 <table id="list" width="90%">
