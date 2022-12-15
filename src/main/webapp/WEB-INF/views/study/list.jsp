@@ -47,11 +47,14 @@
 <table id="list" width="90%">
 	<tr>
 		<th>Id</th>
-		<th>Category</th>
-		<th>Title</th>
-		<th>Writer</th>
-		<th>Content</th>
+		<th>Importance</th>
+		<th>Class(01 or 02)</th>
+		<th>Lecture name</th>
+		<th>Professor</th>
+		<th>Student ID</th>
+		<th>Question</th>
 		<th>Regdate</th>
+		<th>Done</th>
 		<th>Edit</th>
 		<th>Delete</th>
 
@@ -61,11 +64,14 @@
 	<c:forEach items ="${list}" var="u">
 		<tr>
 			<td>${u.seq}</td>
-			<td>${u.category}</td>
-			<td>${u.title}</td>
-			<td>${u.writer}</td>
-			<td>${u.content}</td>
+			<td>${u.importance}</td>
+			<td>${u.cl}</td>
+			<td>${u.lecture}</td>
+			<td>${u.p_name}</td>
+			<td>${u.sid}</td>
+			<td>${u.question}</td>
 			<td>${u.regdate}</td>
+			<td>${u.done}</td>
 			<td><a href="editform/${u.seq}">글수정</a></td>
 			<td><a href="javascript:delete_ok('${u.seq}')">글삭제</a></td>
 		</tr>

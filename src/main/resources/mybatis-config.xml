@@ -5,6 +5,6 @@
 
     <!-- Alias 설정 -->
     <typeAliases>
-        <typeAlias alias ="board" type="com.example.board.BoardVO"/>
+        <typeAlias alias ="study" type="com.example.study.StudyVO"/>
     </typeAliases>
 </configuration>

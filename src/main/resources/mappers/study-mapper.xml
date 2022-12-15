@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Study">
+    <insert id="insertStudy">
+        insert into STUDY (importance, cl, lecture, p_name, sid, question, done ) values (#{importance}, #{cl} , #{lecture} , #{p_name}, #{sid}, #{question}, #{done})
+    </insert>
+    <update id="updateStudy">
+        update STUDY set importance=#{importance},cl= #{cl}, lecture=#{lecture}, p_name= #{p_name},
+                         sid=#{sid}, question=#{question}, done=#{done} where seq= #{seq}
+    </update>
+    <delete id="deleteStudy">
+        delete from STUDY where seq= #{seq}
+    </delete>
+    <select id="getStudy" resultType="study">
+        select * from STUDY where seq= #{seq}
+    </select>
+    <select id="getStudyList" resultType="study">
+        select * from STUDY order by seq desc
+    </select>
+</mapper>
